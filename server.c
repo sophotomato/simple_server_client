@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 		return -1;
 	}
 
-	for (;;) {
+	while (1) {
 		int addrlen = sizeof(struct sockaddr);
 
 		sc = accept(ss, (struct sockaddr*)&client_addr, &addrlen);
@@ -63,7 +63,7 @@ void process_conn_server(int s)
 	ssize_t size = 0;
 	char buffer[1024];
 
-	for (;;) {
+	while (1) {
 		size = read(s, buffer, 1024);
 
 		if (size == 0) {
